@@ -1,0 +1,32 @@
+name: Haskell CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    # - uses: actions/checkout@v3
+    # - uses: actions/setup-haskell@v1
+    - uses: workflow/nix-shell-action@v3.3.0
+    #   with:
+    #     ghc-version: '8.10.3'
+    #     cabal-version: '3.2'
+    
+    - name: Nix Shell
+      uses: workflow/nix-shell-action@v3.3.0
+
+    - name: Build
+      run: |
+        stack clean && stack build
+    - name: Run tests
+      run: stack test

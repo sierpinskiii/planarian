@@ -5,3 +5,5 @@
 While [a maze can be viewed as a graph](https://www.cs.umd.edu/class/spring2019/cmsc132-020X-040X/Project8/proj8.html), we need a method to prove that every graph can be represented as n-dimensional maze.
 
 If then, we can show that Neural Cellular Maze Solver can be applied to an arbitary graph, and network engineers will do the rest of the work to make it work on the real network.
+
+The final goal of this project is to make use of maze-solving Cellular Automata to build a program finding a feasible route from point A to B on the quantum network.
